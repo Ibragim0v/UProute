@@ -1,4 +1,6 @@
-import { useEffect, useState } from "react"
+import { useContext, useEffect, useState } from "react"
+import { lang } from "../../lang/lang";
+import { LangContext } from "../../context/lang-context";
 import './Posts.scss'
 
 export const Posts = () => {
@@ -8,6 +10,7 @@ export const Posts = () => {
     const [userId, setUserId] = useState("all");
     const getUserId = (evt => setUserId(evt.target.value));
     const [allPosts, setAllPosts] = useState([]);
+    const { language } = useContext(LangContext)
     
     useEffect(() => {
 
@@ -43,21 +46,21 @@ export const Posts = () => {
         <>
 
         <select className="select" onChange={getUserId}>
-            <option value="all">All</option>
+            <option value="all">{lang[language].pages.posts.all}</option>
             {users.map(user => (
                 <option key={user.id} value={user.id}>{user.name}</option>
             ))}
         </select>
 
-        <h2 className="post-text">Posts</h2>
+        <h2 className="post-text">{lang[language].pages.posts.text}</h2>
 
         {posts.length > 0 && <ul>
 
             {
                 posts.map(post => (
                     <li className="post-item" key={post.id}>
-                        <h4><span className="text-bold">Title: </span>{post.title}</h4>
-                        <p><span className="text-bold">Summary: </span>{post.body}</p>
+                        <h4><span className="text-bold">{lang[language].pages.posts.title}: </span>{post.title}</h4>
+                        <p><span className="text-bold">{lang[language].pages.posts.summary}: </span>{post.body}</p>
                     </li>
                 ))
             }

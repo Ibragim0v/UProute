@@ -1,15 +1,13 @@
-import { Routes, Route } from "react-router-dom"
-import { Header, Footer } from "./components"
-import { Users, Posts, UserSingle } from "./pages"
+import { Routes, Route } from "react-router-dom";
+import { Header, Footer } from "./components";
+import { Users, Posts, UserSingle } from "./pages";
 import { useContext } from "react";
 import { ModeContext } from "./context/mode-context";
-import { LangContext } from "./context/lang-context";
-import "./App.scss"
+import "./App.scss";
 
 export function App() {
 
     const { mode } = useContext(ModeContext);
-    const { language } = useContext(ModeContext)
 
     return (
         <div className="App">
