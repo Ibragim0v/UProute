@@ -1,0 +1,94 @@
+@import "./../../assets/styles/variables.scss";
+@import "./../../assets/styles/fonts.scss";
+
+.header {
+    display: flex;
+    padding: 10px 0;
+    align-items: center;
+    justify-content: center;
+
+    &__logo-text {
+        font-weight: 800;
+    }
+
+    &__nav {
+        margin-left: 150px;
+        margin-right: 150px;
+    }
+
+    &__list {
+        display: flex;
+    }
+
+    &__item + &__item{
+        margin-left: 150px;
+    }
+
+    &__link {
+        font-size: 20px;
+        padding: 24px;
+    }
+
+    &__select {
+        margin-left: 100px;
+        padding: 10px 20px;
+        border-radius: 5px;
+        text-transform: capitalize;
+        font-weight: 900;
+    }
+
+    &__option {
+        font-weight: 900;
+    }
+}
+
+.dark {
+    background-color: $dark-color;
+    color: $light-color;
+    border: 5px solid $light-color;
+
+    .header__link {
+        background-color: $light-color;
+        color: $dark-color;
+        
+        &--active {
+            background-color: $dark-color;
+            color: $light-color;
+        }
+    }
+    .header__link:hover {
+        background-color: $dark-color;
+        color: $light-color;
+    }
+
+    .header__select {
+        background-color: $light-color;
+        color: $dark-color;
+    }
+}
+
+.light {
+    background-color: $light-color;
+    color: $dark-color;
+    border: 5px solid $dark-color;
+
+    .header__link {
+        background-color: $dark-color;
+        color: $light-color;
+        
+        &--active {
+            background-color: $light-color;
+            color: $dark-color;
+        }
+    }
+
+    .header__link:hover {
+        background-color: $light-color;
+        color: $dark-color;
+    }
+
+    .header__select {
+        background-color: $dark-color;
+        color: $light-color;
+    }
+}

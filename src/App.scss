@@ -1,0 +1,39 @@
+@import './assets/styles/variables.scss';
+
+.light {
+    background-color: $light-color;
+    color: $dark-color;
+    border: 5px solid $dark-color;
+
+    a {
+        color: $dark-color;
+    }
+
+    select {
+        background-color: $dark-color;
+        color: $light-color;
+        padding: 10px;
+        border-radius: 25px;
+        font-weight: 600;
+        text-align: center;
+    }
+}
+
+.dark {
+    background-color: $dark-color;
+    color: $light-color;
+    border: 5px solid $light-color;
+
+    a {
+        color: $light-color;
+    }
+
+    select {
+        background-color: $light-color;
+        color: $dark-color;
+        padding: 10px;
+        border-radius: 25px;
+        font-weight: 600;
+        text-align: center;
+    }
+}

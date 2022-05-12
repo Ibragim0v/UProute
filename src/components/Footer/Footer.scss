@@ -1,0 +1,20 @@
+@import "./../../assets/styles/variables.scss";
+@import "./../../assets/styles/fonts.scss";
+
+.text-center {
+    padding: 12px 0;
+    font-size: 22px;
+    font-weight: 500;
+}
+
+.dark {
+    background-color: $dark-color;
+    color: $light-color;
+    border: 5px solid $light-color;
+}
+
+.light {
+    background-color: $light-color;
+    border: 5px solid $dark-color;
+    color: $dark-color;
+}
