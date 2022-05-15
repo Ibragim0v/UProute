@@ -4,24 +4,19 @@ import { Users, Posts, UserSingle } from "./pages";
 import { useContext } from "react";
 import { ModeContext } from "./context/mode-context";
 import "./App.scss";
+import { Private } from "./Private";
+import { Public } from "./Public";
+import { AuthContext } from "./context/AuthContext";
 
 export function App() {
 
+    const { token } = useContext(AuthContext);
+
     const { mode } = useContext(ModeContext);
 
-    return (
-        <div className="App">
-            <Header/>
+    if (token?.token) {
+        return <Private />
+    }
 
-            <div className={mode}>
-                <Routes>
-                    <Route path="/" element={<Users />} />
-                    <Route path="/users/:userId" element={<UserSingle />} />
-                    <Route path="/posts" element={<Posts />} />
-                </Routes>
-            </div>
-
-            <Footer/>
-        </div>
-    )
+    return <Public />
 }

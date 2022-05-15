@@ -1,0 +1,40 @@
+@import '../../assets/styles/variables.scss';
+
+.home {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: $dark-color;
+
+    &::after {
+        content: '';
+        position: absolute;
+        background-image: url('https://i.pinimg.com/550x/74/11/4f/74114f05e719fa3f533d98c69a095861.jpg');
+        background-size: contain;
+        width: 200px;
+        height: 200px;
+        top: 100px;
+        left: 20px;
+    }
+
+    &::before {
+        content: '';
+        position: absolute;
+        background-image: url('https://i.pinimg.com/550x/74/11/4f/74114f05e719fa3f533d98c69a095861.jpg');
+        background-size: contain;
+        width: 200px;
+        height: 200px;
+        bottom: 100px;
+        right: 20px;
+    }
+}
+
+.home-heading,
+.home-text {
+    color: $light-color;
+}
